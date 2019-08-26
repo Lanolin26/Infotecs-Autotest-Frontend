@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClassName = 'ru.lanolin.MainTest'
+}
+
+group 'ru.lanolin'
+version '1.0-SNAPSHOT'
+applicationName = 'Infotecs Autotest Frontend'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+}

@@ -1,5 +1,9 @@
 .gradle
 /build/
+gradle
+out
+.idea
+.gitignore
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -11,4 +15,8 @@ gradle-app.setting
 .gradletasknamecache
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.properties
+Будет удалено src/test/
+chromedriver
+gradlew
+gradlew.bat
