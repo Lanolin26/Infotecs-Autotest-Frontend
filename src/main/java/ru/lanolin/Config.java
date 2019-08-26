@@ -8,19 +8,20 @@ import java.util.Properties;
 public class Config {
 
 	private final Properties properties;
+	private String file;
 
-	private static Config instance;
-
-	public static Config getInstance() {
-		return instance == null ? instance = new Config() : instance;
+	public Config(Class classFrom){
+		this(classFrom, "application.properties");
 	}
 
-	private Config(){
+	public Config(Class classFrom, String file){
 		properties = new Properties();
+		this.file = file;
+		load(classFrom);
 	}
 
 	public void load(Class classStart){
-		InputStream propertyFile = classStart.getClassLoader().getResourceAsStream("application.properties");
+		InputStream propertyFile = classStart.getClassLoader().getResourceAsStream(file);
 		try {
 			properties.load(propertyFile);
 		} catch (IOException e) {
@@ -28,6 +29,14 @@ public class Config {
 			e.printStackTrace();
 			System.exit(1);
 		}
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+	public String getFile() {
+		return file;
 	}
 
 	public int getIntegerProperty(String key){
@@ -55,6 +64,10 @@ public class Config {
 	public boolean getBooleanProperty(String key, boolean defaultValue){
 		String value = properties.getProperty(key);
 		return Objects.isNull(value) ? defaultValue : Boolean.getBoolean(value);
+	}
+
+	public void clear(){
+		properties.clear();
 	}
 
 }

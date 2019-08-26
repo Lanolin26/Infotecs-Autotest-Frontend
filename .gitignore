@@ -16,7 +16,8 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 gradle/wrapper/gradle-wrapper.properties
-Будет удалено src/test/
+src/test/
 chromedriver
 gradlew
 gradlew.bat
+.fuse_hidden*

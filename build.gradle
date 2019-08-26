@@ -3,7 +3,7 @@ plugins {
 }
 
 application {
-    mainClassName = 'ru.lanolin.MainTest'
+    mainClassName = 'ru.lanolin.Main'
 }
 
 group 'ru.lanolin'
@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    compile 'junit:junit:4.12'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 
 }
